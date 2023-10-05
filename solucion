@@ -1,0 +1,134 @@
+class Nodo:
+    def __init__(self, valor):
+        self.dato = valor
+        self.siguiente = None
+
+class Lista:
+    def __init__(self, cabecera=None):
+        self.primero = cabecera
+
+    def imprimir(self):
+        nodo_actual = self.primero
+        while nodo_actual:
+            print(nodo_actual.dato)
+            nodo_actual = nodo_actual.siguiente
+
+huespedes = Lista()
+
+h1 = (input("Ingrese el nombre del primer huesped: "))
+c1 = (input("Ingrese su numero de cedula: "))
+a1 = ("1")
+Huesped1 = Nodo("Nombre: "+ h1 + " Cedula: "+  c1 + " Habitacion asignada: " + a1)
+h2 = (input("Ingrese el nombre del segundo huesped: "))
+c2 = (input("Ingrese su numero de cedula: "))
+a2 = ("2")
+Huesped2 = Nodo("Nombre: "+ h2 + " Cedula: "+  c2 + " Habitacion asignada: " + a2)
+h3 = (input("Ingrese el nombre del tercer huesped: "))
+c3 = (input("Ingrese su numero de cedula: "))
+a3 = ("3")
+Huesped3 = Nodo("Nombre: "+ h3 + " Cedula: "+  c3 + " Habitacion asignada: " + a3)
+h4 = (input("Ingrese el nombre del cuarto huesped: "))
+c4 = (input("Ingrese su numero de cedula: "))
+a4 = ("4")
+Huesped4 = Nodo("Nombre: "+ h4 + " Cedula: "+  c4 + " Habitacion asignada: " + a4)
+h5 = (input("Ingrese el nombre del quinto huesped: "))
+c5 = (input("Ingrese su numero de cedula: "))
+a5 = ("5")
+Huesped5 = Nodo("Nombre: "+ h5 + " Cedula: "+  c5 + " Habitacion asignada: " + a5)
+a6 = ("6")
+a7 = ("7")
+a8 = ("8")
+a9 = ("9")
+a10 = ("10")
+
+huespedes.primero = Huesped1
+Huesped1.siguiente = Huesped2
+Huesped2.siguiente = Huesped3
+Huesped3.siguiente = Huesped4
+Huesped4.siguiente = Huesped5
+
+print("")
+print("¿Que desea hacer?")
+print("1: Buscar huesped por cedula")
+print("2: Mostrar todos los huespedes")
+answer = int(input("Ingrese su respuesta: "))
+
+while answer == 1:
+    cedula = (input("Ingrese el numero de cedula del huesped: "))
+    if cedula == c1:
+        print("")
+        print("Nombre: "+ h1 + " Cedula: "+  c1 + " Habitacion asignada: " + a1)
+    elif cedula == c2:
+        print("")
+        print("Nombre: "+ h2 + " Cedula: "+  c2 + " Habitacion asignada: " + a2)
+    elif cedula == c3:
+        print("")
+        print("Nombre: "+ h3 + " Cedula: "+  c3 + " Habitacion asignada: " + a3)
+    elif cedula == c4:
+        print("")
+        print("Nombre: "+ h4 + " Cedula: "+  c4 + " Habitacion asignada: " + a4)
+    elif cedula == c5:
+        print("")
+        print("Nombre: "+ h5 + " Cedula: "+  c5 + " Habitacion asignada: " + a5)
+    else:
+        print("")
+        print("La cedula ingresada no corresponde a ningun huesped")
+
+    break
+while answer == 2:
+    print("")
+    print("Lista de huespedes: ")
+    print("")
+    
+
+    huespedes.imprimir()
+    print("")
+    print("Habitaciones disponibles: " + a6 + ", " + a7 + ", " + a8 + ", " + a9 + ", " + a10)
+    break
+
+print("")
+print("¿Se retiró algun huesped?")
+print("1: Si")
+print("2: No")
+answer2 = int(input("Ingrese su respuesta: "))
+
+while answer2 == 1:
+    cedula2 = (input("Ingrese el numero de cedula del huesped retirado: "))
+    if cedula2 == c1:
+        huespedes.primero = Huesped2
+        Huesped2.siguiente = Huesped3
+        Huesped3.siguiente = Huesped4
+        Huesped4.siguiente = Huesped5
+    elif cedula2 == c2:
+        huespedes.primero = Huesped1
+        Huesped1.siguiente = Huesped3
+        Huesped3.siguiente = Huesped4
+        Huesped4.siguiente = Huesped5
+    elif cedula2 == c3:
+        huespedes.primero = Huesped1
+        Huesped1.siguiente = Huesped2
+        Huesped2.siguiente = Huesped4
+        Huesped4.siguiente = Huesped5
+    elif cedula2 == c4:
+        huespedes.primero = Huesped1
+        Huesped1.siguiente = Huesped2
+        Huesped2.siguiente = Huesped3
+        Huesped3.siguiente = Huesped5
+    elif cedula2 == c5:
+        huespedes.primero = Huesped1
+        Huesped1.siguiente = Huesped2
+        Huesped2.siguiente = Huesped3
+        Huesped3.siguiente = Huesped4
+    else:
+        print("La cedula ingresada no corresponde a ningun cliente")
+    
+    print("")
+    print("Lista de huespedes: ")
+    print("")
+
+    huespedes.imprimir()
+    break
+
+while answer2 == 2:
+    print("Operacion finalizada")
+    break
